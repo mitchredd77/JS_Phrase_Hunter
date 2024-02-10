@@ -20,31 +20,31 @@ class Phrase {
         
       });
     }
-    checkLetter(value) {
-        this.letters.forEach(letter => {
-            if (letter === value) {
+    checkLetter(guessLetter) {
+            if (this.letters.includes(guessLetter)) {
+                this.correctLetters.push(guessLetter);
                 return true;
             } else {
-                return false;
+              return false;
             }
-        });
-    }
-    showMatchedLetter() {
-      const allLetters = document.querySelectorAll('.letter')
-      allLetters.forEach(letter => {
-          console.log(letter.textContent);
-          if (this.checkLetter(letter.textContent)) {
-            letter.classList.remove('hide')
-            letter.classList.add('show');
-            
-            }
+        };
     
-      });
-    }
-    }
+    showMatchedLetter() {
+            const hiddenLetters = Array.from(document.querySelectorAll('.hide'));
+            // Filter elements whose text content matches a correct letter
+            hiddenLetters.filter(element => this.correctLetters.includes(element.textContent))
+                .forEach(element => element.classList.replace('hide', 'show'));
+        }
+} 
 
-const test = new Phrase("How are you");
-test.addPhraseToDisplay();
+// const test = new Phrase("How are you");
+// test.addPhraseToDisplay();
+// test.checkLetter('o');
+// test.showMatchedLetter();
+
+
+
+
 
   
 
