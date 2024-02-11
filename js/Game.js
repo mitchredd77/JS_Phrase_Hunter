@@ -5,15 +5,17 @@ class Game {
   constructor() {
     this.missed = 0;
     this.activePhrase = null;
+    this.overlay = document.getElementById('overlay');
     this.phrases = [
-      new Phrase("Life is like a box of chocolates, you never know what you're gonna get."),
-      new Phrase("May the Force be with you."),
-      new Phrase("Winter is coming."),
-      new Phrase("There's no place like home."),
-      new Phrase("The early bird gets the worm.")
+      new Phrase('Life is like a box of chocolates you never know what youre gonna get'),
+      new Phrase('May the Force be with you'),
+      new Phrase('Winter is coming'),
+      new Phrase('Theres no place like home'),
+      new Phrase("The early bird gets the worm")
     ];
   }
   startGame() {
+      this.overlay.style.display = 'none';
       this.activePhrase = this.getRandomPhrase();
       this.activePhrase.addPhraseToDisplay();
   }
@@ -27,10 +29,13 @@ class Game {
       const guessedLetter = clickedButton.textContent;
       clickedButton.disabled = true; // Disable the clicked button
       const guess = this.activePhrase.checkLetter(guessedLetter);
-      console.log(guess);
       if (guess) {
         clickedButton.classList.add('chosen')
         this.activePhrase.showMatchedLetter();
+        if (this.checkForWin()) {
+          console.log(this.checkForWin())
+          this.gameOver();
+        }
       } else {
         clickedButton.classList.add('wrong');
         this.removeLife();
@@ -49,15 +54,19 @@ class Game {
     }
   }
   checkForWin() {
-    if (document.querySelectorAll('.hide').length === 0) {
+    console.log(document.querySelectorAll('.letter.hide'))
+    const isWin = document.querySelectorAll('.letter.hide').length === 0;
+    if (isWin) {
       return true;
     } else {
+      console.log(document.querySelectorAll('.letter.hide').length)
       return false;
     }
   }
-      
+  gameOver() {
+    this.overlay.style.display = 'block';
+    const gameMessage = document.getElementById('game-over-message');
+    console.log(gameMessage);
+    }    
     };
 
-const game = new Game();
-game.startGame();
-game.handleInteraction();
