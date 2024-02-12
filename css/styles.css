@@ -24,6 +24,7 @@
 }
 
 body {
+  background-color: limegreen;
   justify-content: space-evenly;
   flex-direction: column;
   display: flex;
@@ -86,7 +87,7 @@ button {
 /* Title */
 
 .header {
-  color: #3a3f58;
+  color: blue;
 }
 
 
@@ -100,6 +101,7 @@ button {
   margin-right: 2px;
   color: transparent;
   background: var(--color-neutral-light);
+ 
   border-radius: 5px;
 }
 
@@ -111,7 +113,7 @@ button {
 
 .show {
   color: #fff;
-  background-color: #4ac0d5;
+  background-color: blue;
   font-size: 20px;
   height: 65px;
   width: 65px;
@@ -166,7 +168,7 @@ button {
   display: flex;
   flex-direction: column;
   position: fixed;
-  color: #FFFFFF;
+  color: yellow;
   justify-content: center;
   top: 0;
   bottom: 0;
@@ -180,7 +182,7 @@ button {
 }
 
 .start {
-  background-color: #3a3f58;
+  background-color: blue;
 }
 
 .start a {
