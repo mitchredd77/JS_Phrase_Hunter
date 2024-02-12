@@ -9,10 +9,10 @@ class Game {
     this.overlay = document.getElementById('overlay');
     this.heartImages = document.querySelectorAll('#scoreboard .tries img');
     this.phrases = [
-      new Phrase('Warning May start rambling about random facts at any given moment'),
-      new Phrase('My brain is like a browser with too many tabs open constantly crashing'),
+      new Phrase('Show me the money'),
+      new Phrase('Keep calm and carry on'),
       new Phrase('When in doubt look intelligent'),
-      new Phrase('He who laughs last is a bit of a slow thinker'),
+      new Phrase('Every journey begins with a single step'),
       new Phrase("Early bird gets the worm")
     ];
   }
