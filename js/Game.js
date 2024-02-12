@@ -31,12 +31,10 @@ class Game {
   handleInteraction(key) {
       key.disabled = true;
       let guessedLetter = key.textContent;
-      console.log(guessedLetter);
       let guess = this.activePhrase.checkLetter(guessedLetter);
       if (guess) {
         key.classList.add('chosen')
         this.activePhrase.showMatchedLetter();
-        console.log(this.checkForWin());
         if (this.checkForWin()) {
           this.gameOver();
           this.resetGame();
@@ -65,7 +63,6 @@ class Game {
     if (isWin) {
       return true;
     } else {
-      console.log(document.querySelectorAll('.letter.hide').length)
       return false;
     }
   }
