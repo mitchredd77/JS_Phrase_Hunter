@@ -37,10 +37,6 @@ class Phrase {
         }
 } 
 
-// const test = new Phrase("How are you");
-// test.addPhraseToDisplay();
-// test.checkLetter('o');
-// test.showMatchedLetter();
 
 
 

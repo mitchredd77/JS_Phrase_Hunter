@@ -1,11 +1,12 @@
-/* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
- * app.js */
 const clickedStart = document.getElementById('btn__reset');
+const qwertySection = document.getElementById('qwerty');
 clickedStart.addEventListener('click', (e) => {
-    if (e.target) {
-        const game = new Game();
-        game.startGame();
-        game.handleInteraction();
+    game = new Game();
+    game.startGame();
+});
+
+qwertySection.addEventListener('click', (e) => {
+    if (e.target.matches('.key')) {
+       game.handleInteraction(e);
     }
 });
